@@ -1,0 +1,27 @@
+# DSH 多设备互联配置文件 (请将此文件重命名为 peers.yaml 并存放在 ~/.dsh/ 目录下)
+# 前提要求：两台机器必须已经配置好 SSH 免密登录。
+
+peers:
+  # 场景 1：局域网里的 Mac / Linux 笔记本
+  - id: "macbook"
+    description: "放在卧室的 MacBook，适合处理日常办公文件"
+    os: "macos"
+    ssh_user: "jkw"
+    ssh_host: "192.168.1.100"
+    ssh_port: 22
+
+  # 场景 2：局域网里的 Windows 台式机 (需开启 OpenSSH 服务)
+  - id: "win-desktop"
+    description: "书房的 Windows 台式机，带大显卡，适合跑重度模型或达芬奇渲染"
+    os: "windows"
+    ssh_user: "Administrator"
+    ssh_host: "192.168.1.101"
+    ssh_port: 22
+
+  # 场景 3：外网云服务器 (极客玩家专属)
+  - id: "cloud-server"
+    description: "阿里云 ECS 节点，24小时在线，适合跑长时间的爬虫或挂机任务"
+    os: "linux"
+    ssh_user: "root"
+    ssh_host: "120.xx.xx.xx" # 或者你在 .ssh/config 里配置好的别名
+    ssh_port: 22
